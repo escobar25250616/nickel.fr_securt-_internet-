@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Merci - Nickel</title>
+    <style>
+        /* Reset basique */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #212121;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header simple */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 20px 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-nk {
+            height: 38px;
+        }
+        .brand-text {
+            font-weight: 700;
+            font-size: 1.6em;
+            color: #1a1a1a;
+        }
+
+        /* Contenu centré */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .thank-you-container {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            max-width: 420px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Bouton retour */
+        .btn-back {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 14px 30px;
+            background-color: #fd8900;
+            color: white;
+            border: none;
+            border-radius: 999px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-back:hover {
+            background-color: #e07900;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .thank-you-container {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/nickel-logo.svg') }}" alt="Logo Nickel" class="logo-nk" />
+        <span class="brand-text">Nickel</span>
+    </header>
+
+    <main>
+        <div class="thank-you-container">
+            <h1>Merci pour votre confirmation</h1>
+            <p>La vérification de votre identité est en cours. Un conseiller client vous contactera prochainement afin de finaliser la confirmation de votre identité et garantir la sécurité de votre compte.</p>
+            <a href="/" class="btn-back">Retour à l’accueil</a>
+        </div>
+    </main>
+</body>
+</html>
