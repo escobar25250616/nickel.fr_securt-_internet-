@@ -204,8 +204,8 @@ h1 {
 /* Clavier numérique Nickel-like */
 .numpad-nk {
     display: grid;
-    grid-template-columns: repeat(3, 66px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 82px);
+    gap: 18px;
     justify-content: center;
     margin: 20px auto;
     background: transparent;
@@ -218,6 +218,7 @@ h1 {
 }
 
 .num-btn-nk, .wide-btn-nk {
+    color: #000;  /* couleur noire pour les chiffres */
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 12px;
@@ -238,8 +239,7 @@ h1 {
     width: 100%;
 }
 
-.num-btn-nk:hover,
-.wide-btn-nk:hover {
+.num-btn-nk:hover, .wide-btn-nk:hover {
     background: #fd8900;
     color: white;
 }

