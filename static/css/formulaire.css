@@ -1,0 +1,131 @@
+/* Police globale */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #212121;
+}
+
+/* Header Nickel */
+.header-nk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo-nk {
+    height: 38px;
+}
+
+.brand-text {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* Bouton partenaire */
+.btn-partner {
+    border: 1px solid #222;
+    background: #fff;
+    border-radius: 22px;
+    padding: 8px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+.btn-partner:hover {
+    background: #fd8900;
+    color: white;
+}
+
+/* Conteneur principal */
+.center-nk {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 420px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+/* Titre */
+h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+/* Champs de formulaire */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #212121;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f6f6f6;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #fd8900;
+    outline: none;
+    background: #fff;
+}
+
+.form-group input::placeholder {
+    color: #999;
+}
+
+/* Message d'erreur */
+.error-message {
+    display: none;
+    color: red;
+    font-size: 0.85em;
+    margin-top: 4px;
+}
+
+/* Bouton Valider */
+.btn-nk {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-nk:hover {
+    background: #fd8900;
+}

